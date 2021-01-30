@@ -207,4 +207,11 @@ If SSH is enabled on the Raspberry Pi, it should be possible to connect to it fr
 
 If your wireless client has access to your Raspberry Pi (and the internet, if you set up routing), congratulations on setting up your new access point!
 
+If you cannot see the AP after a cold boot, but it works after manually restarting hostapd then add the following lines to /etc/rc.local just before the 'exit 0' See [Forum topic](https://www.raspberrypi.org/forums/viewtopic.php?&t=209818)
+```
+service hostapd stop
+sleep 5
+service hostapd start
+```
+
 If you encounter difficulties, contact the [forums](https://www.raspberrypi.org/forums/) for assistance. Please refer to this page in your message.
